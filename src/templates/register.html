@@ -1,0 +1,25 @@
+{% extends "./base.html" %}
+{% block title %}Register{% endblock %}
+{% block body %}
+<header style="display: flex; flex-direction: row; width: 99vw; align-items: center;">
+    <h1><a href="/" style="text-decoration: none; color: rgb(21, 0, 99);">Home</a></h1>
+    <div style=" display: flex; flex-direction: row; gap: 8px; justify-content: flex-end; align-items: end; width: 100%;">
+        <p><a href="/login" style="color: black; text-decoration: none; background-color: bisque; cursor: pointer; padding: 6px; border-radius: 10px;">login</a></p>
+    </div>
+</header>
+<body>
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <input type="text" placeholder="username" name="username">
+        <input type="text" placeholder="email" name="email">
+        <input type="password" placeholder="password" name="password">
+        <input type="password" placeholder="repetir password" name="password2">
+        <button type="submit">register</button>
+    </form>    
+
+</body>
+<footer>
+
+</footer>
+
+{% endblock %}

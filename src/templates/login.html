@@ -1,0 +1,23 @@
+{% extends "./base.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<header style="display: flex; flex-direction: row; width: 99vw; align-items: center;">
+    <h1><a href="/" style="text-decoration: none; color: rgb(21, 0, 99);">Home</a></h1>
+    <div style=" display: flex; flex-direction: row; gap: 8px; justify-content: flex-end; align-items: end; width: 100%;">
+        <p><a href="/register" style="color: black; text-decoration: none; background-color: rgb(162, 204, 8); cursor: pointer; padding: 6px; border-radius: 10px;">register</a></p>
+    </div>
+</header>
+<body>
+    <h1>Login</h1>
+    <form action="/login" method="post">
+        <input type="text" placeholder="email" name="email">
+        <input type="password" placeholder="password" name="password">
+        <button type="submit">Login</button>
+    </form>    
+
+</body>
+<footer>
+
+</footer>
+
+{% endblock %}
