@@ -3,6 +3,8 @@ from flask import Flask, render_template,request,redirect, url_for
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_required, logout_user,LoginManager, login_user
+from smtplib import SMTP
+
 
 ############ MONGO ######################
 client = MongoClient("mongodb://localhost:27017/")
@@ -134,6 +136,15 @@ def logout():
     logout_user()
     return redirect(url_for("login"))
 
+########################### ADMIN ###################################
+@app.route("/admin",methods=["GET","POST"])
+@login_required
+def admin():
+    datos = list(db.datos.find())
+    users = list(db.users.find())
+    
+    
+    return render_template("admin.html",datos=datos,users=users)
 
 
 

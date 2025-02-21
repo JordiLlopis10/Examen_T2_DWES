@@ -1,0 +1,40 @@
+{% extends "./base.html" %}
+{% block title %}Anyadir{% endblock %}
+{% block body %}
+<header style="display: flex; flex-direction: row; width: 99vw; align-items: center;">
+    <h1><a href="/perfil" style="text-decoration: none; color: rgb(21, 0, 99);">Perfil</a></h1>
+    <div style=" display: flex; flex-direction: row; gap: 8px; justify-content: flex-end; align-items: end; width: 100%;">
+        <p><a href="/logout" style="color: black; text-decoration: none; background-color: rgb(162, 204, 8); cursor: pointer; padding: 6px; border-radius: 10px;">Logout</a></p>
+    </div>
+</header>
+<body>
+    <h1>Todos los datos</h1>
+    <ul>
+        {% for i in datos %}
+        <li>
+            <span><strong>Nombre: </strong>{{ i["nombre"] }}</span> 
+            <span><strong>Autor: </strong>{{ i["autor"] }}</span> 
+            <span><strong>Descripcion: </strong>{{ i["descripcion"] }}</span>
+            <button><a href="/edit/{{ i["_id"] }}">Editar</a></button>
+            <button><a href="/delete/{{ i["_id"] }}">Borrar</a></button>
+
+
+        </li>
+        {% endfor %}
+    </ul>
+<hr>
+    <h1>Todos los users</h1>
+    <ul>
+        {% for i in users %}
+        <li>
+            <span><strong>Nombre: </strong>{{ i["username"] }}</span> 
+            <span><strong>Email: </strong>{{ i["email"] }}</span>
+
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+<footer>
+
+</footer>
+{% endblock %}
